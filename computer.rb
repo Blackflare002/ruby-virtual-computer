@@ -27,7 +27,6 @@ class Computer
     if @files[filename.to_sym].nil?
       puts "File not found."
     else
-      # movies.delete(title.to_sym)
       @files.delete(filename.to_sym)
       puts "#{filename} deleted."
     end
