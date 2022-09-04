@@ -31,14 +31,26 @@ class Computer
       puts "#{filename} deleted."
     end
   end
+  def update_file(filename)
+    if @files[filename.to_sym].nil?
+      puts "File not found."
+    else
+      puts "Input new content:"
+      content = gets.chomp
+      @files[filename.to_sym] = content.to_s
+      puts "#{filename} updated."
+    end
+  end
 end
 
 my_computer = Computer.new("Peko-shachou", "carrots")
 # my_computer.create("Example1")
 #  - create a new file
+# my_computer.update_file("Example4")
+#  - update file
 # my_computer.delete_file("Example4")
 #  - delete specified file
 # puts Computer.get_users
-#  - retrieve info belonging to the class
+#  - retrieve info belonging to the class, class variable @@users
 # puts my_computer.get_files
-#  - retrieve info belonging to the instance
+#  - retrieve info belonging to the instance, instance variable @files
